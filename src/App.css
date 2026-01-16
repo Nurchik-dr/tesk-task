@@ -1,42 +1,141 @@
-#root {
-  max-width: 1280px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* === ROOT THEME === */
+body {
+  background: #0e0f10;
+  color: #e5e5e5;
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input {
+  font-family: inherit;
+}
+
+/* === PAGE CONTAINER === */
+.app-container {
+  max-width: 860px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 32px 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* === TITLES === */
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-subtitle {
+  font-size: 14px;
+  opacity: 0.75;
+  margin-bottom: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* === CONTROLS ROW === */
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
 }
 
+/* === STATUS BADGE === */
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 6px;
+  font-size: 14px;
+}
+
+/* === GENERIC CARD BLOCK === */
 .card {
-  padding: 2em;
+  border: 1px solid #2d2f34;
+  border-radius: 8px;
+  background: #18191c;
+  padding: 14px;
+  margin-top: 24px;
 }
 
-.read-the-docs {
-  color: #888;
+/* === HEADERS INSIDE BLOCKS === */
+.card-title {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* === STREAM OUTPUT === */
+.stream-output {
+  min-height: 180px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+/* === VEGA PREVIEW CONTAINER === */
+.vega-preview {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === FILE INPUT === */
+.file-input-wrapper {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-input-wrapper input[type="file"] {
+  cursor: pointer;
+}
+
+/* === BUTTONS === */
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-play {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-stop {
+  background: #ef4444;
+  color: white;
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+/* === SMALL TEXT HINT === */
+.hint {
+  font-size: 13px;
+  opacity: 0.6;
 }
