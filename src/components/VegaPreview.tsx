@@ -23,9 +23,10 @@ const VegaPreview: React.FC<VegaPreviewProps> = ({ spec }) => {
       data: spec.data ?? { values: SAMPLE_DATA }
     };
 
-    embed(containerRef.current, fullSpec, { actions: false }).catch((err) => {
-      console.error("Vega embed error:", err);
+    embed(containerRef.current, fullSpec, { actions: false }).catch((err: unknown) => {
+      console.error(err);
     });
+
   }, [spec]);
 
   return (
